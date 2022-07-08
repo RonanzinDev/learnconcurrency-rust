@@ -1,0 +1,5 @@
+# Sincrona
+A maior	parte dos programas	executa	seu código	 exatamente na ordem em que ele foi escrito, executando	a primeira linha,depois a segunda,a terceira e assim por diante.Em um programa síncrono existe um bloqueio das tarefas toda vez que uma tarefa não pode ser completada de imediatamente,a fim de esperar sua realização. Um exemplo bom é uma conexão TCP, que exige uma troca de dados pela rede, algo que normalmente toma bastante tempo.Durante	esse tempo,a execução do programa está parada esperando uma solução.
+
+# Assincrona
+Já	na	programação	assíncrona,operações que não conseguem ser	completadas	imediatamente são suspensas	como operações de background(segundo plano).Assim,a thread não é bloqueada e pode continuar executando outras tarefas e,quando a operação completar, a tarefa volta à vida e continua seu processamento de onde parou.
