@@ -1,12 +1,14 @@
 extern crate iron;
-
-use std::io::Read;
-use std::time::Duration;
-
+extern crate iron_test;
 use iron::prelude::*;
 use iron::status;
+use iron::Handler;
 use iron::Timeouts;
+#[allow(unused_imports)]
+use iron_test::{request, response};
 use router::Router;
+use std::io::Read;
+use std::time::Duration;
 fn main() {
     let mut router = Router::new();
     router
@@ -56,4 +58,23 @@ fn textinho(query: &str) -> String {
     ola_string.push_str(query);
     ola_string.push_str(eu_sou);
     ola_string
+}
+
+// Aqui para baixo é parte do teste
+struct GokuHandler;
+impl Handler for GokuHandler {
+    fn handle(&self, _: &mut Request) -> IronResult<Response> {
+        Ok(Response::with((status::Ok, "Oi, eu sou o Goku")))
+    }
+}
+#[cfg(test)]
+mod tests {
+    use iron::Headers;
+
+    use super::*;
+    #[test]
+    fn test_goku_handler() {
+        let response =
+            request::get("http://localhost:3000/", Headers::new(), &GokuHandler).unwrap();
+    }
 }

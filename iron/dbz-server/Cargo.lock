@@ -59,6 +59,7 @@ name = "dbz-server"
 version = "0.1.0"
 dependencies = [
  "iron",
+ "iron-test",
  "router",
 ]
 
@@ -127,6 +128,19 @@ dependencies = [
  "plugin",
  "typemap",
  "url",
+]
+
+[[package]]
+name = "iron-test"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b1944bcf30f8b3f51ebf01e715517dd9755e9480934778d6de70179a41d283c1"
+dependencies = [
+ "hyper",
+ "iron",
+ "log 0.3.9",
+ "url",
+ "uuid",
 ]
 
 [[package]]
@@ -234,7 +248,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "09364cc93c159b8b06b1f4dd8a4398984503483891b0c26b867cf431fb132662"
 dependencies = [
  "phf_shared",
- "rand",
+ "rand 0.6.5",
 ]
 
 [[package]]
@@ -254,6 +268,29 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1a6a0dc3910bc8db877ffed8e457763b317cf880df4ae19109b9f77d277cf6e0"
 dependencies = [
  "typemap",
+]
+
+[[package]]
+name = "rand"
+version = "0.3.23"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "64ac302d8f83c0c1974bf758f6b041c6c8ada916fbb44a609158ca8b064cc76c"
+dependencies = [
+ "libc",
+ "rand 0.4.6",
+]
+
+[[package]]
+name = "rand"
+version = "0.4.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "552840b97013b1a26992c11eac34bdd778e464601a4c2054b5f0bff7c6761293"
+dependencies = [
+ "fuchsia-cprng",
+ "libc",
+ "rand_core 0.3.1",
+ "rdrand",
+ "winapi",
 ]
 
 [[package]]
@@ -489,6 +526,15 @@ dependencies = [
  "idna",
  "matches",
  "percent-encoding",
+]
+
+[[package]]
+name = "uuid"
+version = "0.5.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bcc7e3b898aa6f6c08e5295b6c89258d1331e9ac578cc992fb818759951bdc22"
+dependencies = [
+ "rand 0.3.23",
 ]
 
 [[package]]
